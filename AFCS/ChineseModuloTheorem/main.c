@@ -78,14 +78,16 @@ void solve_eq(FILE *fp)
 
 	mpz_init_set_ui(x, 0);
 
+	mpz_t mul;
+	mpz_init(mul);
 	for(int i = 0; i < equations; i++)
 	{
-		mpz_t mul;
-		mpz_init_set(mul, c[i]);
+		mpz_set(mul, c[i]);
 		mpz_mul(mul, mul, solutions[i]);
 		mpz_add(x, x, mul);
 		mpz_mod(x, x, n);
 	}
+	mpz_clear(mul);
 	
 	gmp_printf("Big Solution To The Equations: x = %Zd\n", x);
 
