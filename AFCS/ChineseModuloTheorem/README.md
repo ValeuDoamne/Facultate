@@ -9,7 +9,7 @@ x = <number> mod <number>
 ... and so on
 ```
 
-##Usage:
+## Usage:
 ```
 $ make # to compile
 $ ./out/main file.txt
